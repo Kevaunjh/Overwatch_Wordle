@@ -1,21 +1,31 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React, {useState} from 'react';
-import {Text, StyleSheet, View} from 'react-native';
+import {ImageBackground, Text, StyleSheet, View} from 'react-native';
+
+const bclimage = {uri: 'https://wallpaperaccess.com/full/856987.jpg'};
 
 function App() {
   return (
-    <View
-    style={{
-      flexDirection: 'row',
-      height: 100,
-      padding: 20,
-    }}>
-    <View style={{backgroundColor: 'red', flex: 0.5}} />
-    <View style={{backgroundColor: 'green', flex: 0.5}} />
-    <Text>Hello World!</Text>
+    <View  style={ styles.container }>
+    <ImageBackground source={bclimage} style={styles.image}>
+      <Text style={styles.text}>Inside</Text>
+    </ImageBackground>
   </View>
   );
 }
+
+const styles = StyleSheet.create({
+  image: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
+  container: {
+    flex: 1,
+  },
+
+});
+
 
 export default App;
