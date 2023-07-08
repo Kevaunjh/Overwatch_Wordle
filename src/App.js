@@ -11,8 +11,8 @@ function App() {
       height: 100,
       padding: 20,
     }}>
-//
     <View style={{backgroundColor: 'red', flex: 0.5}} />
+    <View style={{backgroundColor: 'green', flex: 0.5}} />
     <Text>Hello World!</Text>
   </View>
   );
