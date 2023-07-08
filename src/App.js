@@ -9,7 +9,7 @@ function App() {
   return (
     <View  style={ styles.container }>
     <ImageBackground source={bclimage} style={styles.image}>
-      <Text style={styles.text}>Inside</Text>
+      <Text>Working</Text>
     </ImageBackground>
   </View>
   );
