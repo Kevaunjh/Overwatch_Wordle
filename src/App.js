@@ -14,7 +14,7 @@ function App() {
 
       <Text style={styles.startingtext}>
       <Text style={styles.startingtextstyle1}>Guess today's Overwatch champion! </Text>
-      <Text style={styles.startingtextstyle2}>Type Any Overwatch Heros to Begin.</Text>
+      <Text style={styles.startingtextstyle2}>Type Any Heros to Begin.</Text>
       </Text>
 
   
