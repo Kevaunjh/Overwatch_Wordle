@@ -1,7 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
 
-const bckimage = 'https://wallpaperaccess.com/full/856987.jpg';
 const OWLogo = 'https://www.pngmart.com/files/22/Overwatch-Logo-PNG-Isolated-HD.png';
 const Send = 'https://static.thenounproject.com/png/3553333-200.png';
 
@@ -15,23 +14,23 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    alert(`${heroName}`)
     setHeroList([...heroList, heroName]);
     setHeroName('');
+    
   };
 
   return (
-    <div className="container">
-      <img className="image" src={bckimage} alt="" />
-
+    <body className="image">
+      <div id="logocontainer">
       <img className="logosize" src={OWLogo} alt="" />
-
+      </div>
       <div className="startingtext">
         <p className="startingtextstyle1">Guess today's Overwatch champion!</p>
         <p className="startingtextstyle2">Type any hero to begin.</p>
       </div>
-
-      <div className="container2">
-        <form className="typechampiondiv" onSubmit={handleSubmit}>
+      <div className="formcontainer">
+        <form onSubmit={handleSubmit}>
           <input
             className="center"
             type="text"
@@ -42,8 +41,10 @@ function App() {
           />
           <input className="sendsize" type="image" src={Send} alt="" />
         </form>
+        
       </div>
-    </div>
+      
+    </body>
   );
 }
 

@@ -1,26 +1,30 @@
 .image {
-  flex: 1;
   background-image: url("https://wallpaperaccess.com/full/856987.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.container {
-  flex: 1;
-}
 
 .logosize {
   width: 400px;
   height: 200px;
+}
+
+#logocontainer {
   align-self: center;
+  text-align: center;
 }
 
 .startingtext {
-  align-self: center;
   border: 2px solid #f99e1a;
   border-radius: 20px;
   width: 400px;
-  padding-top: 15px;
+  padding-top: 7px;
   background-color: #43484c;
   font-size: 20px;
+  align-self: center;
+  margin: auto;
 }
 
 .startingtextstyle1 {
@@ -37,11 +41,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 12px;
 }
 
-.container2 {
-  margin-top: 14px;
+.formcontainer {
   display: flex;
   justify-content: center;
 }
@@ -54,7 +56,9 @@
   color: orange;
   border: 2px solid #f99e1a;
   font-size: 16px;
-  margin-left: 18px;
+  margin-left: 3vw;
+  align-items: center;
+
 }
 
 .sendsize {
@@ -62,6 +66,7 @@
   width: 80px;
   height: 80px;
   align-self: center;
+  align-items: center;
 }
 
 #bck {
