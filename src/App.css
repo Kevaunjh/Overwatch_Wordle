@@ -1,44 +1,67 @@
-.App {
-  text-align: center;
+.image {
+  flex: 1;
+  background-image: url("https://wallpaperaccess.com/full/856987.jpg");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  flex: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logosize {
+  width: 400px;
+  height: 200px;
+  align-self: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.startingtext {
+  align-self: center;
+  border: 2px solid #f99e1a;
+  border-radius: 20px;
+  width: 400px;
+  padding-top: 15px;
+  background-color: #43484c;
+  font-size: 20px;
+}
+
+.startingtextstyle1 {
+  color: #f99e1a;
+  font-size: 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-::placeholder {
+.startingtextstyle2 {
   color: black;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px;
+}
+
+.container2 {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  text-align: center;
+  height: 50px;
+  width: 300px;
+  background-color: #43484c;
+  color: orange;
+  border: 2px solid #f99e1a;
+  font-size: 16px;
+  margin-left: 18px;
+}
+
+.sendsize {
+  margin-top: 0;
+  width: 80px;
+  height: 80px;
+  align-self: center;
 }
 
 #bck {
