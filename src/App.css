@@ -46,6 +46,7 @@
 .formcontainer {
   display: flex;
   justify-content: center;
+  flex: 1;
 }
 
 .center {
@@ -64,8 +65,8 @@
 .sendsize {
   width: 80px;
   height: 80px;
-  display: flex;
   justify-content: flex;
+  flex: 1;
 }
 
 .dropdown {
@@ -85,4 +86,10 @@
 
 #bck {
   background-color: #43484c;
+}
+
+#flex {
+  display: flex;
+  align-items: center;
+  justify-content: center
 }

@@ -68,9 +68,12 @@ function App() {
         <p className="startingtextstyle1">Guess today's Overwatch champion!</p>
         <p className="startingtextstyle2">Type any hero to begin.</p>
       </div>
-      <button className="sendsize" type="image" src={Send} alt=""/>
+      
+
       <div className="formcontainer">
         <form onSubmit={handleSubmit}>
+
+          <div id='flex'>
           <input
             className="center"
             type="text"
@@ -78,7 +81,13 @@ function App() {
             value={heroName}
             onChange={handleInputChange}
             placeholder="Enter an Overwatch Hero..."
+            
           />
+          
+          <input className="sendsize" type="image" src={Send} alt=""/>
+
+          </div>
+
           <div className="dropdown">
             {heroes.filter(item => {
               const searchTerm = heroName.toLowerCase();
@@ -89,6 +98,7 @@ function App() {
             .map((item) => (
               <div className="dropdown-row">{item.name}</div>
             ))}
+            
           </div>
         </form>
         
