@@ -59,7 +59,6 @@ body {
   color: orange;
   border: 2px solid #f99e1a;
   font-size: 16px;
-  margin-left: 0.9vw;
   align-items: center;
 
 }
@@ -73,8 +72,7 @@ body {
 }
 
 .dropdown {
-  margin-right: 5.21vw;
-  margin-left: 0.9vw;
+  margin-right: 20.5%;
   color: #f99e1a;
   background-color: #43484c;
   display: flex;
