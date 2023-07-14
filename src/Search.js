@@ -67,9 +67,11 @@ const Search = () => {
         <p className="startingtextstyle1">Guess today's Overwatch champion!</p>
         <p className="startingtextstyle2">Type any hero to begin.</p>
       </div>
-      <button className="sendsize" type="button">→</button>
+      
       <div className="formcontainer">
         <form onSubmit={handleSubmit}>
+
+          <div id='flex'>
           <input
             className="center"
             type="text"
@@ -78,6 +80,12 @@ const Search = () => {
             onChange={handleInputChange}
             placeholder="Enter an Overwatch Hero..."
           />
+
+          <input className="sendsize" type="image" src={Send} alt=""/>
+          </div>
+
+
+
           <div className="dropdown">
             {heroes.filter(item => {
               const searchTerm = heroName.toLowerCase();
