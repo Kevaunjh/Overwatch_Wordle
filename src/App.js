@@ -7,9 +7,48 @@ const Send = 'https://static.thenounproject.com/png/3553333-200.png';
 function App() {
   const [heroName, setHeroName] = useState('');
   const [heroList, setHeroList] = useState([]);
+  const heroes = [
+    { name: "Ana" },
+    { name: "Ashe" },
+    { name: "Baptiste" },
+    { name: "Bastion" },
+    { name: "Brigitte" },
+    { name: "Cassidy" },
+    { name: "D.Va" },
+    { name: "Doomfist" },
+    { name: "Echo" },
+    { name: "Genji" },
+    { name: "Hanzo" },
+    { name: "Junker Queen" },
+    { name: "Junkrat" },
+    { name: "Kiriko" },
+    { name: "Lifeweaver" },
+    { name: "Lucio" },
+    { name: "Mei" },
+    { name: "Mercy" },
+    { name: "Moira" },
+    { name: "Orisa" },
+    { name: "Pharah" },
+    { name: "Ramattra" },
+    { name: "Reaper" },
+    { name: "Reinhardt" },
+    { name: "Roadhoag" },
+    { name: "Sigma" },
+    { name: "Soldier: 76" },
+    { name: "Sombra" },
+    { name: "Symmetra" },
+    { name: "Torbjorn" },
+    { name: "Tracer" },
+    { name: "Widowmaker" },
+    { name: "Winston" },
+    { name: "Wrecking Ball" },
+    { name: "Zarya" },
+    { name: "Zen" }
+  ]
 
-  const handleInputChange = (event) => {
-    setHeroName(event.target.value);
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    setHeroName(e.target.value);
   };
 
   const handleSubmit = (event) => {
@@ -29,6 +68,7 @@ function App() {
         <p className="startingtextstyle1">Guess today's Overwatch champion!</p>
         <p className="startingtextstyle2">Type any hero to begin.</p>
       </div>
+      <button className="sendsize" type="image" src={Send} alt=""/>
       <div className="formcontainer">
         <form onSubmit={handleSubmit}>
           <input
@@ -39,7 +79,17 @@ function App() {
             onChange={handleInputChange}
             placeholder="Enter an Overwatch Hero..."
           />
-          <input className="sendsize" type="image" src={Send} alt="" />
+          <div className="dropdown">
+            {heroes.filter(item => {
+              const searchTerm = heroName.toLowerCase();
+              const fullName = item.name.toLowerCase();
+
+              return searchTerm && fullName.startsWith(searchTerm)
+            })
+            .map((item) => (
+              <div className="dropdown-row">{item.name}</div>
+            ))}
+          </div>
         </form>
         
       </div>

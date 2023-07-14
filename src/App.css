@@ -56,17 +56,31 @@
   color: orange;
   border: 2px solid #f99e1a;
   font-size: 16px;
-  margin-left: 3vw;
+  margin-right: 6vw;
   align-items: center;
 
 }
 
 .sendsize {
-  margin-top: 0;
   width: 80px;
   height: 80px;
-  align-self: center;
-  align-items: center;
+  display: flex;
+  justify-content: flex;
+}
+
+.dropdown {
+  margin-right: 6vw;
+  color: #f99e1a;
+  background-color: #43484c;
+  display: flex;
+  flex-direction: column;
+  border: gray;
+}
+
+.dropdown-row{
+  cursor: pointer;
+  text-align: center;
+  margin: 12px 0;
 }
 
 #bck {
