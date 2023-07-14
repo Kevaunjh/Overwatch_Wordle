@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Table from './Table';
 
 const OWLogo = 'https://www.pngmart.com/files/22/Overwatch-Logo-PNG-Isolated-HD.png';
 const Send = 'https://static.thenounproject.com/png/3553333-200.png';
@@ -46,6 +47,7 @@ const Search = () => {
       { name: "Zarya", gender: "Female", age: "20-30", role: "Tank", abilities: 5, affiliation: "Overwatch" },
       { name: "Zenyatta", gender: "Other", age: "20-30", role: "Support", abilities: 5, affiliation: "Shambali" }
     ];
+
   const handleInputChange = (e) => {
     e.preventDefault();
     setHeroName(e.target.value);
@@ -65,10 +67,14 @@ const Search = () => {
       alert(`Valid hero: ${heroName}`);
       setHeroList([...heroList, heroName]);
       setHeroName('');
+
     } else {
       alert(`Invalid hero: ${heroName}`);
+      setHeroList([...heroList, heroName]);
+      setHeroName('');
     }
   };
+
 
   return (
     <body>
@@ -85,7 +91,7 @@ const Search = () => {
 
           <div id='flex'>
           <input
-            className="center"
+            className="center button1"
             type="text"
             name="name"
             value={heroName}
@@ -99,19 +105,32 @@ const Search = () => {
 
 
           <div className="dropdown">
+          <div class="dropdown-content">
             {heroes.filter(item => {
               const searchTerm = heroName.toLowerCase();
               const fullName = item.name.toLowerCase();
               return searchTerm && fullName.startsWith(searchTerm) && fullName !== searchTerm;
             })
             .map((item) => (
-              <div onClick={()=>onSearch(item.name)} className="dropdown-row" key={item.name}>
+              <div onClick={()=>onSearch(item.name)} className="dropdown-row button1" key={item.name}>
                 {item.name}
-              </div>
+                </div>
             ))}
+            </div>
           </div>
         </form>
       </div>
+
+      {/* This is going to start off hidden but keep it shown for the testing.
+      We're going to make it when a function gets a valid input this changes to show (even tho u alr knew that <3) 
+      Feel free to change the styling
+      
+      Also We're going to move this to a new file
+      */ }
+      <div id="gap"></div>
+
+        <Table/>
+
     </body>
   );
 };

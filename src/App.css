@@ -79,12 +79,18 @@ body {
   flex-direction: column;
   border: gray;
   margin-top: -1.6vh;
+  
 }
 
 .dropdown-row{
   cursor: pointer;
   text-align: center;
-  margin: 12px 0;
+  height: 7vh;
+  line-height: 7vh;
+}
+
+.dropdown-row:hover {
+  background-color: #212226;
 }
 
 #bck {
@@ -94,5 +100,68 @@ body {
 #flex {
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+}
+
+.Guesslist {
+  text-align: center;
+  margin-top: 4vh;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#Guesslist {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  
+}
+
+.Guesses {
+
+  
+}
+
+.CategoreyOutline {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.Categorey {
+  width: 7.87vw;
+  color: #f99e1a;
+  border-color: #f99e1a;
+  border: 2px solid #212226;
+  background-color: #43484c;
+}
+
+.HeroGuessInfo {
+  width: 7.87vw;
+  color: #f99e1a;
+  border-color: #f99e1a;
+  border: 2px solid #212226;
+  background-color: #43484c;
+  height: 8vh;
+}
+
+.VCTEXT {
+
+}
+
+tr {
+  display: flex;
+}
+
+#gap {
+  margin-top: 2vh;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #43484c;
+  z-index: 1;
+  width: 306px;
 }
