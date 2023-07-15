@@ -1,13 +1,7 @@
 import React from 'react';
+import './Search';
 
-const Table = () => {
-
-/* This is going to start off hidden but keep it shown for the testing.
-      We're going to make it when a function gets a valid input this changes to show (even tho u alr knew that <3) 
-Feel free to change the styling */
-
-
-
+const Table = (props) => {
   return (
     <div>
       <div className='CategoreyOutline'>
@@ -26,13 +20,12 @@ Feel free to change the styling */
         </table>
       </div>
 
-      {/* This is where the add character function is going to create a new section with the character information*/}
       <div className='Guesses'>
         <table id='Guesslist'>
           <tbody>
             <tr>
               <td className='HeroGuessInfo'></td>
-              <td className='HeroGuessInfo'></td>
+              <td className='HeroGuessInfo'>{props.hero}</td>
               <td className='HeroGuessInfo'></td>
               <td className='HeroGuessInfo'></td>
               <td className='HeroGuessInfo'></td>

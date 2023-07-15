@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Table from './Table';
+import heroes from './data.json';
 
 const OWLogo = 'https://www.pngmart.com/files/22/Overwatch-Logo-PNG-Isolated-HD.png';
 const Send = 'https://static.thenounproject.com/png/3553333-200.png';
@@ -8,50 +9,13 @@ const Send = 'https://static.thenounproject.com/png/3553333-200.png';
 const Search = () => {
     const [heroName, setHeroName] = useState('');
     const [heroList, setHeroList] = useState([]);
-    const heroes = [
-      { name: "Ana", gender: "Female", age: "50-60", role: "Support", abilities: 4, affiliation: "Overwatch"},
-      { name: "Ashe", gender: "Female", age: "30-40", role: "Damage", abilities: 4, affiliation: "Deadlock Gang" },
-      { name: "Baptiste", gender: "Male", age: "30-40", role: "Support", abilities: 5, affiliation: "Overwatch" },
-      { name: "Bastion", gender: "Other", age: "30-40", role: "Damage", abilities: 5, affiliation: "Ironclad Guild" },
-      { name: "Brigitte", gender: "Female", age: "20-30", role: "Support", abilities: 7, affiliation: "Overwatch" },
-      { name: "Cassidy", gender: "Male", age: "30-40", role: "Damage", abilities: 4, affiliation: "Overwatch" },
-      { name: "D.Va", gender: "Female", age: "10-20", role: "Tank", abilities: 8, affiliation: "Overwatch"},
-      { name: "Doomfist", gender: "Male", age: "40-50", role: "Tank", abilities: 5, affiliation: "Talon" },
-      { name: "Echo", gender: "Other", age: "Classified", role: "Damage", abilities: 6, affiliation: "Overwatch" },
-      { name: "Genji", gender: "Male", age: "30-40", role: "Damage", abilities: 5, affiliation: "Overwatch" },
-      { name: "Hanzo", gender: "Male", age: "30-40", role: "Damage", abilities: 6, affiliation: "Shimada Clan" },
-      { name: "Junker Queen", gender: "Female", age: "30-40", role: "Tank", abilities: 6, affiliation: "Junkers" },
-      { name: "Junkrat", gender: "Male", age: "20-30", role: "Damage", abilities: 5, affiliation: "Junkers" },
-      { name: "Kiriko", gender: "Female", age: "20-30", role: "Support", abilities: 5, affiliation: "Vigilante" },
-      { name: "Lifeweaver", gender: "Female", age: "20-30", role: "Support", abilities: 6, affiliation: "Scientist" },
-      { name: "Lucio", gender: "Male", age: "20-30", role: "Support", abilities: 6, affiliation: "Overwatch" },
-      { name: "Mei", gender: "Female", age: "30-40", role: "Damage", abilities: 4, affiliation: "Overwatch" },
-      { name: "Mercy", gender: "Female", age: "30-40", role: "Support", abilities: 6, affiliation: "Overwatch" },
-      { name: "Moira", gender: "Female", age: "40-50", role: "Support", abilities: 4, affiliation: "Talon" },
-      { name: "Orisa", gender: "Other", age: "1-10", role: "Tank", abilities: 5, affiliation: "Overwatch" },
-      { name: "Pharah", gender: "Female", age: "30-40", role: "Damage", abilities: 5, affiliation: "Overwatch"},
-      { name: "Reaper", gender: "Male", age: "50-60", role: "Damage", abilities: 5, affiliation: "Talon" },
-      { name: "Ramattra", gender: "Other", age: "20-30", role: "Tank", abilities: 5, affiliation: "Null Sector" },
-      { name: "Reinhardt", gender: "Male", age: "60-70", role: "Tank", abilities: 5, affiliation: "Overwatch" },
-      { name: "Roadhoag", gender: "Male", age: "40-50", role: "Tank", abilities: 4, affiliation: "Junkers" },
-      { name: "Sigma", gender: "Male", age: "60-70", role: "Tank", abilities: 5, affiliation: "Talon" },
-      { name: "Sojourn", gender: "Female", age: "50-60", role: "Damage", abilities: 4, affiliation: "Overwatch"},
-      { name: "Soldier: 76", gender: "Male", age: "50-60", role: "Damage", abilities: 5, affiliation: "Overwatch" },
-      { name: "Sombra", gender: "Female", age: "30-40", role: "Damage", abilities: 6, affiliation: "Talon" },
-      { name: "Symmetra", gender: "Female", age: "20-30", role: "Damage", abilities: 4, affiliation: "Vishkar Corporation" },
-      { name: "Torbjorn", gender: "Male", age: "50-60", role: "Damage", abilities: 5, affiliation: "Ironclad Guild" },
-      { name: "Tracer", gender: "Female", age: "20-30", role: "Damage", abilities: 4, affiliation: "Overwatch" },
-      { name: "Widowmaker", gender: "Female", age: "30-40", role: "Damage", abilities: 4, affiliation: "Talon"},
-      { name: "Winston", gender: "Male", age: "20-30", role: "Tank", abilities: 4, affiliation: "Overwatch" },
-      { name: "Wrecking Ball", gender: "Male", age: "10-20", role: "Tank", abilities: 6, affiliation: "Junkers" },
-      { name: "Zarya", gender: "Female", age: "20-30", role: "Tank", abilities: 5, affiliation: "Overwatch" },
-      { name: "Zenyatta", gender: "Other", age: "20-30", role: "Support", abilities: 5, affiliation: "Shambali" }
-    ];
 
   const handleInputChange = (e) => {
     e.preventDefault();
     setHeroName(e.target.value);
   };
+
+  const [isHeroValid, setIsHeroValid] = useState(false);
 
   const onSearch = (searchTerm) =>{
     setHeroName(searchTerm);
@@ -60,14 +24,16 @@ const Search = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
-    const isHeroValid = heroes.some(hero => hero.name.toLowerCase() === heroName.toLowerCase());
-  
-    if (isHeroValid) {
-      alert(`Valid hero: ${heroName}`);
+
+    const isValid = heroes.some(
+      (hero) => hero.name.toLowerCase() === heroName.toLowerCase()
+    );
+
+    setIsHeroValid(isValid); // Update isHeroValid state
+
+    if (isValid) {
       setHeroList([...heroList, heroName]);
       setHeroName('');
-
     } else {
       alert(`Invalid hero: ${heroName}`);
       setHeroList([...heroList, heroName]);
@@ -121,15 +87,11 @@ const Search = () => {
         </form>
       </div>
 
-      {/* This is going to start off hidden but keep it shown for the testing.
-      We're going to make it when a function gets a valid input this changes to show (even tho u alr knew that <3) 
-      Feel free to change the styling
-      
-      Also We're going to move this to a new file
-      */ }
+      {/* This is going to start off hidden but keep it shown for testing.
+      We're going to make it show when a valid input is entered */}
       <div id="gap"></div>
 
-        <Table/>
+      {isHeroValid ? <Table hero={heroName}/> : null}
 
     </body>
   );
