@@ -4,18 +4,14 @@ import Search from'./Search';
 
 
 
-const Table = () => {
-  const [heroList, setHeroList] = useState([]);
+const Table = ({ heroList}) => {
 
-  const onHeroInputChange = (hero) => {
-    setHeroList((prevHeroList) => [...prevHeroList, hero]);
-
-  };
 
 
   
   return (
     <div>
+      
       <div className='CategoreyOutline'>
         <table id='Guesslist'>
           <thead>
@@ -31,12 +27,11 @@ const Table = () => {
           </thead>
         </table>
       </div>
-      <Search onHeroInputChange={onHeroInputChange} />
       <div className='Guesses'>
         <table id='Guesslist'>
           <tbody>
-            {heroList.map((hero) => (
-            <tr key={hero.id}>
+            {heroList.map((hero, index) => (
+            <tr key={hero.index}>
               <td className='HeroGuessInfo'>{hero.name}</td>
               <td className='HeroGuessInfo'>{hero.name}</td>
               <td className='HeroGuessInfo'>{hero.gender}</td>

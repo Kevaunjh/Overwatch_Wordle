@@ -127,6 +127,7 @@ body {
 .CategoreyOutline {
   display: flex;
   justify-content: center;
+  margin-top: 2vh;
   
 }
 
