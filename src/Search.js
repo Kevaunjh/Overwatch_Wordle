@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Table from './Table';
+import handleButtonClick from './Table';
 import heroes from './data.json';
 
 const OWLogo = 'https://www.pngmart.com/files/22/Overwatch-Logo-PNG-Isolated-HD.png';
