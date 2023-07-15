@@ -8,7 +8,7 @@ const App = () => {
   const OWLogo = 'https://www.pngmart.com/files/22/Overwatch-Logo-PNG-Isolated-HD.png';
 
   const onHeroInputChange = (hero) => {
-    setHeroList((prevHeroList) => [...prevHeroList, hero]);
+    setHeroList((prevHeroList) => [hero, ...prevHeroList]);
   };
 
   return (
