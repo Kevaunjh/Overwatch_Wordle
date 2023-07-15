@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Search from './Search';
 import Table from './Table';
+import Owdle from './Owdle';
 import heroes from './data.json';
 
 const App = () => {
@@ -11,11 +12,9 @@ const App = () => {
     setHeroList((prevHeroList) => [hero, ...prevHeroList]);
   };
 
-  return (
+  const ashe = heroes.find(hero => hero.name === "Ashe");
 
-    
-
-      
+  return (  
     <div>
       <div className="App">
       <div id="logocontainer">
@@ -27,7 +26,7 @@ const App = () => {
       </div>
     </div>
       <Search onHeroInputChange={onHeroInputChange} />
-      <Table heroList={heroList} />
+      <Owdle heroList={heroList} solution={ashe}/>
     </div>
   );
 };
