@@ -12,7 +12,6 @@ const Search = () => {
     const [heroList, setHeroList] = useState([]);
 
   const handleInputChange = (e) => {
-    e.preventDefault();
     setHeroName(e.target.value);
   };
 
@@ -25,22 +24,25 @@ const Search = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const hero = heroes.find((hero) => hero.name === heroName);
 
-    const isValid = heroes.some(
-      (hero) => hero.name.toLowerCase() === heroName.toLowerCase()
-    );
+    setIsHeroValid(hero); // Update isHeroValid state
 
-    setIsHeroValid(isValid); // Update isHeroValid state
-
-    if (isValid) {
-      setHeroList([...heroList, heroName]);
+    if (hero) {
+      setHeroList([...heroList, hero]);
       setHeroName('');
+      
     } else {
       alert(`Invalid hero: ${heroName}`);
       setHeroList([...heroList, heroName]);
       setHeroName('');
     }
   };
+
+  const handleButtonClick = (hero) => {
+    setHeroList([...heroList, hero]);
+  };
+
 
 
   return (
@@ -66,7 +68,7 @@ const Search = () => {
             placeholder="Enter an Overwatch Hero..."
           />
 
-          <input onClick={()=> onSearch(heroName)} className="sendsize" type="image" src={Send} alt=""/>
+          <input onClick={()=> {onSearch(heroName); handleButtonClick(heroName) }} className="sendsize" type="image" src={Send} alt=""/>
           </div>
 
 

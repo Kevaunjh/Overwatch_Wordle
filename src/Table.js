@@ -5,18 +5,35 @@ import heroes from './data.json';
 
 
 
-const Table = (props) => {
-  
+const Table = () => {
   const [heroList, setHeroList] = useState([]);
+  const [heroName, setHeroName] = useState('');
 
-  const handleButtonClick = () => {
-    setHeroList(heroes);
+  const handleInputChange = (event) => {
+    setHeroName(event.target.value);
   };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    const hero = heroes.find((hero) => hero.name === heroName);
+    if (hero) {
+      setHeroList([...heroList, hero]);
+    }
+  };
+
+  const handleButtonClick = (hero) => {
+    setHeroList([...heroList, hero]);
+  };
+
 
 
   
   return (
     <div>
+      <button onClick={() => handleButtonClick(heroes[0])}>Add Superman to Table</button>
+      <button onClick={() => handleButtonClick(heroes[1])}>Add Spiderman to Table</button>
+      <button onClick={() => handleButtonClick(heroes[2])}>Add Batman to Table</button>
       <div className='CategoreyOutline'>
         <table id='Guesslist'>
           <thead>
@@ -34,7 +51,7 @@ const Table = (props) => {
       </div>
 
       <div className='Guesses'>
-      <button onClick={handleButtonClick}>Add Heroes to Table</button>
+     
         <table id='Guesslist'>
           <tbody>
             <tr>
@@ -46,8 +63,8 @@ const Table = (props) => {
               <td className='HeroGuessInfo'></td>
               <td className='HeroGuessInfo'></td>
             </tr>
-            {heroList.map((hero, index) => (
-            <tr key={index}>
+            {heroList.map((hero) => (
+            <tr key={hero.id}>
               <td className='HeroGuessInfo'>{hero.name}</td>
               <td className='HeroGuessInfo'>{hero.name}</td>
               <td className='HeroGuessInfo'>{hero.gender}</td>
