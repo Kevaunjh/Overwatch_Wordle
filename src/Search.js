@@ -21,12 +21,12 @@ const Search = ({ onHeroInputChange }) => {
     event.preventDefault();
     const hero = heroes.find((hero) => hero.name.toLowerCase() === heroName.toLowerCase());
 
-    if (hero) {
-      if (!guessedHeroes.includes(hero.name)) {
-        setHeroName('');
-        onHeroInputChange(hero);
-        setGuessedHeroes((prevGuessedHeroes) => [...prevGuessedHeroes, hero.name]);
-      }
+    if (hero && !guessedHeroes.includes(hero.name)) {
+      setHeroName('');
+      onHeroInputChange(hero);
+      setGuessedHeroes((prevGuessedHeroes) => [...prevGuessedHeroes, hero.name]);
+    } else{
+      
     }
   };
 
@@ -63,6 +63,7 @@ const Search = ({ onHeroInputChange }) => {
                   {item.name}
                 </div>
               ))}
+              {heroName && !heroes.some((item) => item.name.toLowerCase().startsWith(heroName.toLowerCase())) && <div className="notfound">No hero found.</div>}
           </div>
         </div>
       </form>
