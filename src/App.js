@@ -12,7 +12,7 @@ const App = () => {
     setHeroList((prevHeroList) => [hero, ...prevHeroList]);
   };
 
-  const ashe = heroes.find(hero => hero.name === "Widowmaker");
+  const ashe = heroes.find(hero => hero.name === "Echo");
 
   return (  
     <div>
