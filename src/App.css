@@ -94,6 +94,12 @@ body {
   line-height: 7vh;
 }
 
+.notfound {
+  text-align: center;
+  height: 5vh;
+  line-height: 5vh;
+}
+
 .dropdown-row:hover {
   background-color: #212226;
 }
