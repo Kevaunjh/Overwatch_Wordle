@@ -84,7 +84,7 @@ body {
   position: absolute;
   background-color: #43484c;
   z-index: 1;
-  width: 307px;
+  width: 306px;
 }
 
 .dropdown-row{
@@ -92,6 +92,12 @@ body {
   text-align: center;
   height: 7vh;
   line-height: 7vh;
+}
+
+.notfound {
+  text-align: center;
+  height: 5vh;
+  line-height: 5vh;
 }
 
 .dropdown-row:hover {
