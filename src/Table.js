@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 
 const Table = ({ hero, name_checker, gender_checker, age_checker, role_checker, abilities_checker, affiliation_checker }) => {
+
+  const showImage = (item) => {
+    if (item.picture) {
+      return <img src={item.picture} alt={item.name} />;
+    } else {
+      return null;
+    }
+  };
+
   return (
     <div>
         <table id='Guesslist'>
           <tbody>
             <tr>
-              <td className={name_checker ? 'correct' : 'wrong'}>{hero.name}</td>
+              <td id="picsize" className={name_checker ? 'correct' : 'wrong'}>{showImage(hero)}</td>
               <td className={name_checker ? 'correct' : 'wrong'}>{hero.name}</td>
               <td className={gender_checker ? 'correct' : 'wrong'}>{hero.gender}</td>
               <td className={age_checker ? 'correct' : 'wrong'}>{hero.age}</td>

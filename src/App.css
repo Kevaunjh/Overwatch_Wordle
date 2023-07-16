@@ -202,3 +202,9 @@ tr {
 #gap {
   margin-top: 2vh;
 }
+
+img {
+  width: 40px;
+  height: 40px;
+  margin-top: 1.5vh;
+}
