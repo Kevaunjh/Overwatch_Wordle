@@ -7,7 +7,6 @@ body {
   background-attachment: fixed;
 }
 
-
 .logosize {
   width: 400px;
   height: 200px;
@@ -20,7 +19,7 @@ body {
 
 .startingtext {
   border: 2px solid #f99e1a;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 400px;
   padding-top: 7px;
   background-color: #43484c;
@@ -35,10 +34,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
 }
 
 .startingtextstyle2 {
-  color: black;
+  color: white;
   font-size: 17px;
   display: flex;
   align-items: center;
@@ -58,9 +58,8 @@ body {
   background-color: #43484c;
   color: orange;
   border: 2px solid #f99e1a;
-  font-size: 16px;
+  font-size: 20px;
   align-items: center;
-
 }
 
 .sendsize {
@@ -72,14 +71,20 @@ body {
 }
 
 .dropdown {
-  margin-right: 20.5%;
+  width: 21.5%;
   color: #f99e1a;
   background-color: #43484c;
   display: flex;
   flex-direction: column;
   border: gray;
   margin-top: -1.6vh;
-  
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #43484c;
+  z-index: 1;
+  width: 21.3%;
 }
 
 .dropdown-row{
@@ -196,11 +201,4 @@ tr {
 
 #gap {
   margin-top: 2vh;
-}
-
-.dropdown-content {
-  position: absolute;
-  background-color: #43484c;
-  z-index: 1;
-  width: 306px;
 }

@@ -26,13 +26,7 @@ const Search = ({ onHeroInputChange }) => {
         setHeroName('');
         onHeroInputChange(hero);
         setGuessedHeroes((prevGuessedHeroes) => [...prevGuessedHeroes, hero.name]);
-      } else {
-        alert(`${hero.name} has already been guessed!`);
-        setHeroName('');
       }
-    } else {
-      alert(`Invalid hero: ${heroName}`);
-      setHeroName('');
     }
   };
 
