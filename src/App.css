@@ -35,6 +35,7 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  text-align: center;
 }
 
 .startingtextstyle2 {
@@ -43,6 +44,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .formcontainer {
@@ -130,10 +132,6 @@ body {
   
 }
 
-.Guesses {
-
-  
-}
 
 .CategoreyOutline {
   display: flex;
@@ -143,6 +141,21 @@ body {
 
 .Categorey {
   width: 7.87vw;
+  color: #f99e1a;
+  border-color: #f99e1a;
+  border: 2px solid #212226;
+  background-color: #43484c;
+}
+
+#Categorey2 {
+  width: 20vw;
+  color: black;
+  border-color: #f99e1a;
+  border: 2px solid #212226;
+}
+
+#Categorey3 {
+  width: 20vw;
   color: #f99e1a;
   border-color: #f99e1a;
   border: 2px solid #212226;
@@ -213,4 +226,43 @@ img {
   width: 40px;
   height: 40px;
   margin-top: 1.5vh;
+}
+
+.switchstyle {
+  border: 4px solid black;
+  width: 200px;
+  height: 50px;
+  margin-top: 2vh;
+  margin-right: 10vw;
+  margin-left: 10vw;
+  background: #43484c;
+  color: #f99e1a;
+  border-color: #f99e1a;
+  margin-bottom: 6vh;
+}
+
+.switchstyle2 {
+  border: 4px solid black;
+  width: 200px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6vh;
+  margin-right: 3vw;
+  margin-left: 3vw;
+  background: #43484c;
+  color: #f99e1a;
+  border-color: #f99e1a;
+  margin-bottom: 2vh;
+}
+
+#colourblack {
+  color:  #f99e1a;
+  margin-left: 0.5vw;
+}
+
+#skillsize {
+  align-self: center;
+  text-align: center;
+  
 }

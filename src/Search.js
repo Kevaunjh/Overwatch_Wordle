@@ -4,9 +4,14 @@ import heroes from './data.json';
 
 const Send = 'https://static.thenounproject.com/png/3553333-200.png';
 
-const Search = ({ onHeroInputChange }) => {
+let recentguess1 = '';
+let recentguess2 = '';
+let recentguess3 = '';
+
+const Search = ({ onHeroInputChange, solution, currentScreen }) => {
   const [heroName, setHeroName] = useState('');
   const [guessedHeroes, setGuessedHeroes] = useState([]);
+  const [correctguess, setcorrectguess] = useState(false);
 
   const handleInputChange = (e) => {
     setHeroName(e.target.value);
@@ -21,15 +26,40 @@ const Search = ({ onHeroInputChange }) => {
     event.preventDefault();
     const hero = heroes.find((hero) => hero.name.toLowerCase() === heroName.toLowerCase());
 
+    if (currentScreen === 'heroguess') {
+      recentguess1 = heroName;
+    } else if (currentScreen === 'owskindle') {
+      recentguess2 = heroName;
+    } else {
+      recentguess3 = heroName;
+    }
+
+
     if (hero && !guessedHeroes.includes(hero.name)) {
       setHeroName('');
       onHeroInputChange(hero);
       setGuessedHeroes((prevGuessedHeroes) => [...prevGuessedHeroes, hero.name]);
-    } else{
-      
-    }
+      if ((heroName === solution.name && currentScreen === 'heroguess' ) || (recentguess1===solution.name && currentScreen === 'heroguess')){
+        setcorrectguess(true);
+      } else if  ((heroName === solution.name && currentScreen === 'owskindle' ) || (recentguess2===solution.name && currentScreen === 'owskindle')) {
+        setcorrectguess(true);
+      } else if ((heroName === solution.name && currentScreen === 'owskilldle' ) || (recentguess3===solution.name && currentScreen === 'owskilldle')) {
+        setcorrectguess(true);
+      } else  {
+      }
+    } 
   };
 
+  if (recentguess1===solution.name && currentScreen === 'heroguess') {
+    return null;
+  } else if (recentguess2===solution.name && currentScreen === 'owskindle') {
+    return null;
+  } else if (recentguess3===solution.name && currentScreen === 'owskilldle') {
+    return null;
+  } else {
+  }
+
+  
   return (
     <div className="formcontainer">
       <form onSubmit={handleSubmit}>
@@ -67,6 +97,8 @@ const Search = ({ onHeroInputChange }) => {
           </div>
         </div>
       </form>
+
+      {}
     </div>
   );
 };

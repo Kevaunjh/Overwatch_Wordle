@@ -1,12 +1,33 @@
 import React from "react";
+import Solotable from "./Solotable";
+import Modal from "./Modal";
 
-const Owskilldle = () =>  {
-    return (
-        <div>
-      <h1>Welcome to Skill Screen!</h1>
-      <p>This is another screen content.</p>
+const Owskilldle = ({ heroList, solution }) => {
+  return (
+    <div>
+      {heroList.length > 0 && (
+        <div className="CategoreyOutline">
+          <table id="Guesslist">
+            <thead>
+              <tr>
+                <th className="Categorey">Picture</th>
+                <th id="Categorey3">Name</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      )}
+      {heroList.map((hero, index) => {
+        const name_checker = solution.name === hero.name;
+        return (
+          <div key={index}>
+            <Solotable hero={hero} name_checker={name_checker} />
+            {name_checker && <Modal solution={hero.name} />}
+          </div>
+        );
+      })}
     </div>
-    );
+  );
 };
 
 export default Owskilldle;

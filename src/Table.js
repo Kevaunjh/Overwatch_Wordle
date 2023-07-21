@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Table = ({ hero, name_checker, gender_checker, age_checker, role_checker, abilities_checker, affiliation_checker }) => {
 
