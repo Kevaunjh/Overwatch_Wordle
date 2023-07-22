@@ -2,7 +2,7 @@ import React from 'react';
 import Table from './Table';
 import Modal from './Modal';
 
-const Owdle = ({ heroList, solution }) => {
+const Owdle = ({ heroList, solution, timecheck }) => {
 
 
   return (
@@ -39,7 +39,7 @@ const Owdle = ({ heroList, solution }) => {
                 abilities_checker={abilities_checker} 
                 affiliation_checker={affiliation_checker}
               />
-             {name_checker && gender_checker && age_checker && role_checker && abilities_checker && affiliation_checker && <Modal  solution={hero.name}/>}
+             {name_checker && gender_checker && age_checker && role_checker && abilities_checker && affiliation_checker && <Modal  solution={hero.name} timecheck={timecheck}/>}
           </div>
         );
       })}

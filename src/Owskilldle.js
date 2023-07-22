@@ -2,7 +2,7 @@ import React from "react";
 import Solotable from "./Solotable";
 import Modal from "./Modal";
 
-const Owskilldle = ({ heroList, solution }) => {
+const Owskilldle = ({ heroList, solution, timecheck }) => {
   return (
     <div>
       {heroList.length > 0 && (
@@ -22,7 +22,7 @@ const Owskilldle = ({ heroList, solution }) => {
         return (
           <div key={index}>
             <Solotable hero={hero} name_checker={name_checker} />
-            {name_checker && <Modal solution={hero.name} />}
+            {name_checker && <Modal solution={hero.name} timecheck={timecheck} />}
           </div>
         );
       })}

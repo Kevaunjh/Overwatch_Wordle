@@ -8,7 +8,7 @@ const Timer = ({ timecheck }) => {
     const updateTimer = () => {
       const now = moment();
 
-      const targetTime = now.clone().hour(21).minute(5).second(0);
+      const targetTime = now.clone().hour(22).minute(49).second(49);
 
       if (now.isAfter(targetTime)) {
         targetTime.add(1, 'day');
@@ -30,9 +30,8 @@ const Timer = ({ timecheck }) => {
 
   useEffect(() => {
     if (remainingTime === '00:00:00') {
-      
       timecheck();
-      
+
     }
   }, [remainingTime]);
 

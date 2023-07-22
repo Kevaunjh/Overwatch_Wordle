@@ -13,13 +13,13 @@ const App = () => {
   const [skinheroList, setskinHeroList] = useState([]);
   const [skillheroList, setskillHeroList] = useState([]);
   const [currentScreen, setCurrentScreen] = useState('heroguess');
-  const [randomNumber, setrandomNumber] = useState(20);
+  const [randomNumber, setrandomNumber] = useState(0);
   const [randomNumber2, setrandomNumber2] = useState(0);
   const [randomNumber3, setrandomNumber3] = useState(0);
   const OWLogo = 'https://www.pngmart.com/files/22/Overwatch-Logo-PNG-Isolated-HD.png';
 
   const onHeroInputChange = (hero) => {
-    
+
     setHeroList((prevHeroList) => [hero, ...prevHeroList]);
   };
 
@@ -52,9 +52,15 @@ const App = () => {
     setCurrentScreen('heroguess');
   }
 
+  let randomNumberz = Math.floor(Math.random() * (36 - 0 + 1) + 0);
+  let randomNumberzz = Math.floor(Math.random() * (147 - 0 + 1) + 0);
+  let randomNumberzzz = Math.floor(Math.random() * (3 - 0 + 1) + 0);
+
+
   const timecheck = () => {
-    setrandomNumber(11);
-    alert(randomNumber);
+    setrandomNumber(randomNumberz);
+    setrandomNumber2(randomNumberzz);
+    setrandomNumber3(randomNumberzzz);
 
   }
 
@@ -88,9 +94,9 @@ const App = () => {
         </div>
         <button className='switchstyle' onClick={switchToOwskilldle}>Switch to Owskilldle</button>
         </div>
-        
-          <Search onHeroInputChange={onHeroInputChange} solution={ashe} currentScreen={currentScreen}/>
-          <Owdle heroList={heroList} solution={ashe} />
+
+          <Search onHeroInputChange={onHeroInputChange} solution={ashe} currentScreen={currentScreen} />
+          <Owdle heroList={heroList} solution={ashe} timecheck={timecheck}/>
           
           
           
@@ -114,8 +120,8 @@ const App = () => {
         </div>
         <button className='switchstyle' onClick={switchToOwdle}>Switch to Owdle</button>
         </div>
-        <Search onHeroInputChange={onHeroInputChangeskin} solution={kiriko} currentScreen={currentScreen} />
-        <Owskindle heroList={skinheroList} solution={kiriko}/>
+        <Search onHeroInputChange={onHeroInputChangeskin} solution={ana} currentScreen={currentScreen} />
+        <Owskindle heroList={skinheroList} solution={ana} timecheck={timecheck}/>
         
         </div>
 
@@ -138,8 +144,8 @@ const App = () => {
         <button className='switchstyle' onClick={switchToOwdle}>Switch to Owdle</button>
         </div>
  
-        <Search onHeroInputChange={onHeroInputChangeskill} solution={ana}  currentScreen={currentScreen}/>
-        <Owskilldle heroList={skillheroList} solution={ana}/>
+        <Search onHeroInputChange={onHeroInputChangeskill} solution={kiriko}  currentScreen={currentScreen}/>
+        <Owskilldle heroList={skillheroList} solution={kiriko} timecheck={timecheck}/>
     
         
         </div>

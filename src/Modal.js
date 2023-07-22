@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Timer from './Timer';
 
-const Modal = ({ solution }) => {
+const Modal = ({ solution, timecheck}) => {
   const [showModal, setShowModal] = useState(true);
 
 
@@ -25,7 +25,7 @@ const Modal = ({ solution }) => {
         <h4>The hero of the day was</h4>
         <p className="solution">{solution}</p>
         <p>The next Hero will be chosen in </p>
-        <Timer/>
+        <Timer timecheck={timecheck}/>
         <button className='switchstyle2' onClick={handleClose}>Close</button>
       </div>
     </div>
