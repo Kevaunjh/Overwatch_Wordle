@@ -6,12 +6,16 @@ import Owskilldle from './Owskilldle';
 import heroes from './data.json';
 import skins from './skindata.json';
 import abilities from './abilitydata.json'
+import Timer from './Timer';
 
 const App = () => {
   const [heroList, setHeroList] = useState([]);
   const [skinheroList, setskinHeroList] = useState([]);
   const [skillheroList, setskillHeroList] = useState([]);
   const [currentScreen, setCurrentScreen] = useState('heroguess');
+  const [randomNumber, setrandomNumber] = useState(0);
+  const [randomNumber2, setrandomNumber2] = useState(0);
+  const [randomNumber3, setrandomNumber3] = useState(0);
   const OWLogo = 'https://www.pngmart.com/files/22/Overwatch-Logo-PNG-Isolated-HD.png';
 
   const onHeroInputChange = (hero) => {
@@ -48,10 +52,11 @@ const App = () => {
     setCurrentScreen('heroguess');
   }
 
-  
-  const randomNumber = 1;
-  const randomNumber2 = 0;
-  const randomNumber3 = 1;
+  const timecheck = () => {
+    setrandomNumber(11);
+    alert(randomNumber);
+
+  }
 
 
   const ashe = heroes.find(hero => hero.name === heroes[randomNumber].name);
@@ -76,6 +81,10 @@ const App = () => {
           <div className="startingtext">
           <p className="startingtextstyle1">Guess today's Overwatch champion!</p>
           <p className="startingtextstyle2">Type any hero to begin.</p>
+          <div id='skillsize'>
+          <p>Time until Switch</p>
+          <Timer timecheck={timecheck}/>
+          </div>
         </div>
         <button className='switchstyle' onClick={switchToOwskilldle}>Switch to Owskilldle</button>
         </div>
@@ -98,6 +107,10 @@ const App = () => {
           <p className="startingtextstyle2"> Todays Skin: </p>  <p id='colourblack'> {skins[randomNumber2].skin} </p>
           </div>
           <p className="startingtextstyle2">Type any hero to begin.</p>
+          <div id='skillsize'>
+          <p>Time until Switch</p>
+          <Timer timecheck={timecheck}/>
+          </div>
         </div>
         <button className='switchstyle' onClick={switchToOwdle}>Switch to Owdle</button>
         </div>
@@ -117,6 +130,10 @@ const App = () => {
           <p className="startingtextstyle1">Guess today's Overwatch Skill!</p>
           <p id='skillsize'>{showImage(abilities[randomNumber3])}</p>
           <p className="startingtextstyle2">Type any hero to begin.</p>
+          <div id='skillsize'>
+          <p>Time until Switch</p>
+          <Timer timecheck={timecheck}/>
+          </div>
         </div>
         <button className='switchstyle' onClick={switchToOwdle}>Switch to Owdle</button>
         </div>

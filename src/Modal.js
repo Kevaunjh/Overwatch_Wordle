@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Timer from './Timer';
 
 const Modal = ({ solution }) => {
   const [showModal, setShowModal] = useState(true);
@@ -21,10 +22,11 @@ const Modal = ({ solution }) => {
     <div className="modal">
       <div>
         <h1>You Win!</h1>
+        <h4>The hero of the day was</h4>
         <p className="solution">{solution}</p>
         <p>The next Hero will be chosen in </p>
+        <Timer/>
         <button className='switchstyle2' onClick={handleClose}>Close</button>
-        {/* Add a clock that changes the hero at 5 pm every day*/}
       </div>
     </div>
   );

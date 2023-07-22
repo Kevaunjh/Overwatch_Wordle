@@ -46,18 +46,22 @@ const Search = ({ onHeroInputChange, solution, currentScreen }) => {
       } else if ((heroName === solution.name && currentScreen === 'owskilldle' ) || (recentguess3===solution.name && currentScreen === 'owskilldle')) {
         setcorrectguess(true);
       } else  {
+        setcorrectguess(false);setcorrectguess(false);
       }
     } 
   };
+  
+  if (solution.name != recentguess1 || recentguess2 || recentguess3) {
 
-  if (recentguess1===solution.name && currentScreen === 'heroguess') {
+  } else if (recentguess1===solution.name && currentScreen === 'heroguess') {
     return null;
   } else if (recentguess2===solution.name && currentScreen === 'owskindle') {
     return null;
-  } else if (recentguess3===solution.name && currentScreen === 'owskilldle') {
+  } else if ((recentguess3===solution.name && currentScreen === 'owskilldle') || correctguess) {
     return null;
   } else {
   }
+
 
   
   return (
