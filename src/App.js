@@ -13,12 +13,13 @@ const App = () => {
   const [skinheroList, setskinHeroList] = useState([]);
   const [skillheroList, setskillHeroList] = useState([]);
   const [currentScreen, setCurrentScreen] = useState('heroguess');
-  const [randomNumber, setrandomNumber] = useState(0);
+  const [randomNumber, setrandomNumber] = useState(20);
   const [randomNumber2, setrandomNumber2] = useState(0);
   const [randomNumber3, setrandomNumber3] = useState(0);
   const OWLogo = 'https://www.pngmart.com/files/22/Overwatch-Logo-PNG-Isolated-HD.png';
 
   const onHeroInputChange = (hero) => {
+    
     setHeroList((prevHeroList) => [hero, ...prevHeroList]);
   };
 
@@ -38,7 +39,6 @@ const App = () => {
       return null;
     }
   };
-
 
   const switchToOwskindle = () => {
     setCurrentScreen('owskindle');

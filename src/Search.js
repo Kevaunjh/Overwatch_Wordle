@@ -51,7 +51,7 @@ const Search = ({ onHeroInputChange, solution, currentScreen }) => {
     } 
   };
   
-  if (solution.name != recentguess1 || recentguess2 || recentguess3) {
+  if (solution.name !== recentguess1 || recentguess2 || recentguess3) {
 
   } else if (recentguess1===solution.name && currentScreen === 'heroguess') {
     return null;
