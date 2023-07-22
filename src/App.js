@@ -57,6 +57,10 @@ const App = () => {
     setCurrentScreen('heroguess');
   }
 
+  const handleClose = () => {
+    return;
+  }
+
   let randomNumberz = Math.floor(Math.random() * (36 - 0 + 1) + 0);
   let randomNumberzz = Math.floor(Math.random() * (147 - 0 + 1) + 0);
   let randomNumberzzz = Math.floor(Math.random() * (3 - 0 + 1) + 0);
@@ -111,7 +115,7 @@ const App = () => {
           <p className="startingtextstyle2">Type any hero to begin.</p>
           <div id='skillsize'>
           <p>Time until Switch</p>
-          <Timer timecheck={timecheck}/>
+          <Timer timecheck={timecheck} handleClose={handleClose}/>
           </div>
         </div>
         <button className='switchstyle' onClick={switchToOwskilldle}>Switch to Owskilldle</button>
@@ -137,7 +141,7 @@ const App = () => {
           <p className="startingtextstyle2">Type any hero to begin.</p>
           <div id='skillsize'>
           <p>Time until Switch</p>
-          <Timer timecheck={timecheck}/>
+          <Timer timecheck={timecheck} handleClose={handleClose}/>
           </div>
         </div>
         <button className='switchstyle' onClick={switchToOwdle}>Switch to Owdle</button>
@@ -160,7 +164,7 @@ const App = () => {
           <p className="startingtextstyle2">Type any hero to begin.</p>
           <div id='skillsize'>
           <p>Time until Switch</p>
-          <Timer timecheck={timecheck}/>
+          <Timer timecheck={timecheck} handleClose={handleClose}/>
           </div>
         </div>
         <button className='switchstyle' onClick={switchToOwdle}>Switch to Owdle</button>

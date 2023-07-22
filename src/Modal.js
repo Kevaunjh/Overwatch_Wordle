@@ -7,7 +7,6 @@ const Modal = ({ solution, timecheck}) => {
 
   const handleClose = () => {
     setShowModal(false);
-    return null;
   };
 
   
@@ -22,7 +21,7 @@ const Modal = ({ solution, timecheck}) => {
         <h4>The hero of the day was</h4>
         <p className="solution">{solution}</p>
         <p>The next Hero will be chosen in </p>
-        <Timer timecheck={timecheck}/>
+        <Timer timecheck={timecheck} handleClose={handleClose}/>
         <button className='switchstyle2' onClick={handleClose}>Close</button>
       </div>
     </div>

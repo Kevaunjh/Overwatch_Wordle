@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
-const Timer = ({ timecheck }) => {
+const Timer = ({ timecheck, handleClose }) => {
   const [remainingTime, setRemainingTime] = useState('');
 
   useEffect(() => {
     const updateTimer = () => {
       const now = moment();
 
-      const targetTime = now.clone().hour(14).minute(56).second(30);
+      const targetTime = now.clone().hour(17).minute(0).second(0);
 
       if (now.isAfter(targetTime)) {
         targetTime.add(1, 'day');
@@ -29,6 +29,23 @@ const Timer = ({ timecheck }) => {
   }, []);
 
   useEffect(() => {
+
+    if (remainingTime === '00:00:03') 
+    {
+      handleClose();
+    }
+
+    if (remainingTime === '00:00:02') 
+    {
+      handleClose();
+    }
+
+    if (remainingTime === '00:00:01') 
+    {
+      handleClose();
+    }
+
+
     if (remainingTime === '00:00:00') {
       timecheck();
 
