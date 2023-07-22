@@ -5,18 +5,15 @@ const Modal = ({ solution, timecheck}) => {
   const [showModal, setShowModal] = useState(true);
 
 
-  if (solution === "Junkrat") {
-  }
-
   const handleClose = () => {
     setShowModal(false);
+    return null;
   };
 
-  if (!showModal) {
-    return null; // Return null when showModal is false to hide the modal
-  }
-
   
+  if (!showModal) {
+    return null;
+  }
 
   return (
     <div className="modal">

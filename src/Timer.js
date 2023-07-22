@@ -8,7 +8,7 @@ const Timer = ({ timecheck }) => {
     const updateTimer = () => {
       const now = moment();
 
-      const targetTime = now.clone().hour(22).minute(49).second(49);
+      const targetTime = now.clone().hour(14).minute(56).second(30);
 
       if (now.isAfter(targetTime)) {
         targetTime.add(1, 'day');

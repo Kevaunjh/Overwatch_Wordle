@@ -16,6 +16,11 @@ const App = () => {
   const [randomNumber, setrandomNumber] = useState(0);
   const [randomNumber2, setrandomNumber2] = useState(0);
   const [randomNumber3, setrandomNumber3] = useState(0);
+  const [isSearchVisible, setIsSearchVisible] = useState(true);
+  const [isOwdleVisible, setIsOwdleVisible] = useState(true);
+  const [isOwskilldleVisible, setIsOwskilldleVisible] = useState(true);
+  const [isOwskindleVisible, setIsOwskindleVisible] = useState(true);
+  
   const OWLogo = 'https://www.pngmart.com/files/22/Overwatch-Logo-PNG-Isolated-HD.png';
 
   const onHeroInputChange = (hero) => {
@@ -58,11 +63,28 @@ const App = () => {
 
 
   const timecheck = () => {
+
+    setIsSearchVisible(false);
+    setIsOwdleVisible(false);
+    setIsOwskindleVisible(false);
+    setIsOwskilldleVisible(false);
+
+    setHeroList([]);
+    setskinHeroList([]);
+    setskillHeroList([]);
+
     setrandomNumber(randomNumberz);
     setrandomNumber2(randomNumberzz);
     setrandomNumber3(randomNumberzzz);
 
-  }
+
+    setTimeout(() => {
+      setIsSearchVisible(true);
+      setIsOwdleVisible(true);
+      setIsOwskindleVisible(true);
+      setIsOwskilldleVisible(true);
+    }, 6000); // Adjust the delay time as needed
+  };
 
 
   const ashe = heroes.find(hero => hero.name === heroes[randomNumber].name);
@@ -95,8 +117,8 @@ const App = () => {
         <button className='switchstyle' onClick={switchToOwskilldle}>Switch to Owskilldle</button>
         </div>
 
-          <Search onHeroInputChange={onHeroInputChange} solution={ashe} currentScreen={currentScreen} />
-          <Owdle heroList={heroList} solution={ashe} timecheck={timecheck}/>
+        {isSearchVisible && (<Search onHeroInputChange={onHeroInputChange} solution={ashe} currentScreen={currentScreen} />)}
+        {isOwdleVisible && <Owdle heroList={heroList} solution={ashe} timecheck={timecheck} />}
           
           
           
@@ -120,8 +142,8 @@ const App = () => {
         </div>
         <button className='switchstyle' onClick={switchToOwdle}>Switch to Owdle</button>
         </div>
-        <Search onHeroInputChange={onHeroInputChangeskin} solution={ana} currentScreen={currentScreen} />
-        <Owskindle heroList={skinheroList} solution={ana} timecheck={timecheck}/>
+        {isSearchVisible && (<Search onHeroInputChange={onHeroInputChangeskin} solution={ana} currentScreen={currentScreen} />)}
+        {isOwskindleVisible && <Owskindle heroList={skinheroList} solution={ana} timecheck={timecheck}/> }
         
         </div>
 
@@ -144,8 +166,8 @@ const App = () => {
         <button className='switchstyle' onClick={switchToOwdle}>Switch to Owdle</button>
         </div>
  
-        <Search onHeroInputChange={onHeroInputChangeskill} solution={kiriko}  currentScreen={currentScreen}/>
-        <Owskilldle heroList={skillheroList} solution={kiriko} timecheck={timecheck}/>
+        {isSearchVisible && (<Search onHeroInputChange={onHeroInputChangeskill} solution={kiriko} currentScreen={currentScreen} />)}
+        {isOwskilldleVisible && <Owskilldle heroList={skillheroList} solution={kiriko} timecheck={timecheck}/> }
     
         
         </div>
