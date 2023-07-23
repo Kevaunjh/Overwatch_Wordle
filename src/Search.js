@@ -46,7 +46,7 @@ const Search = ({ onHeroInputChange, solution, currentScreen }) => {
       } else if ((heroName === solution.name && currentScreen === 'owskilldle' ) || (recentguess3===solution.name && currentScreen === 'owskilldle')) {
         setcorrectguess(true);
       } else  {
-        setcorrectguess(false);setcorrectguess(false);
+        setcorrectguess(false);
       }
     } 
   };

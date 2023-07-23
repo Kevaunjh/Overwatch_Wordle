@@ -15,7 +15,7 @@ const App = () => {
   const [currentScreen, setCurrentScreen] = useState('heroguess');
   const [randomNumber, setrandomNumber] = useState(0);
   const [randomNumber2, setrandomNumber2] = useState(0);
-  const [randomNumber3, setrandomNumber3] = useState(0);
+  const [randomNumber3, setrandomNumber3] = useState(60);
   const [isSearchVisible, setIsSearchVisible] = useState(true);
   const [isOwdleVisible, setIsOwdleVisible] = useState(true);
   const [isOwskilldleVisible, setIsOwskilldleVisible] = useState(true);
@@ -63,7 +63,7 @@ const App = () => {
 
   let randomNumberz = Math.floor(Math.random() * (36 - 0 + 1) + 0);
   let randomNumberzz = Math.floor(Math.random() * (147 - 0 + 1) + 0);
-  let randomNumberzzz = Math.floor(Math.random() * (3 - 0 + 1) + 0);
+  let randomNumberzzz = Math.floor(Math.random() * (139 - 0 + 1) + 0);
 
 
   const timecheck = () => {

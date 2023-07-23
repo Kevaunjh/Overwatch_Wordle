@@ -56,7 +56,7 @@ body {
 .center {
   text-align: center;
   height: 50px;
-  width: 300px;
+  width: 19vw;
   background-color: #43484c;
   color: orange;
   border: 2px solid #f99e1a;
@@ -79,14 +79,14 @@ body {
   display: flex;
   flex-direction: column;
   border: gray;
-  margin-top: -1.6vh;
+  margin-top: -1.7vh;
 }
 
 .dropdown-content {
   position: absolute;
   background-color: #43484c;
   z-index: 1;
-  width: 306px;
+  width: 19.5vw;
 }
 
 .dropdown-row{
