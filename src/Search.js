@@ -30,10 +30,11 @@ const Search = ({ onHeroInputChange, solution, currentScreen }) => {
       recentguess1 = heroName;
     } else if (currentScreen === 'owskindle') {
       recentguess2 = heroName;
-    } else {
+    } else if (currentScreen === 'owskilldle'){
       recentguess3 = heroName;
-    }
+    } else {
 
+    }
 
     if (hero && !guessedHeroes.includes(hero.name)) {
       setHeroName('');
@@ -51,13 +52,11 @@ const Search = ({ onHeroInputChange, solution, currentScreen }) => {
     } 
   };
   
-  if (solution.name !== recentguess1 || recentguess2 || recentguess3) {
-
-  } else if (recentguess1===solution.name && currentScreen === 'heroguess') {
+   if (recentguess1===solution.name && currentScreen === 'heroguess') {
     return null;
   } else if (recentguess2===solution.name && currentScreen === 'owskindle') {
     return null;
-  } else if ((recentguess3===solution.name && currentScreen === 'owskilldle') || correctguess) {
+  } else if (recentguess3===solution.name && currentScreen === 'owskilldle') {
     return null;
   } else {
   }

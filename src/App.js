@@ -13,9 +13,9 @@ const App = () => {
   const [skinheroList, setskinHeroList] = useState([]);
   const [skillheroList, setskillHeroList] = useState([]);
   const [currentScreen, setCurrentScreen] = useState('heroguess');
-  const [randomNumber, setrandomNumber] = useState(0);
-  const [randomNumber2, setrandomNumber2] = useState(0);
-  const [randomNumber3, setrandomNumber3] = useState(60);
+  const [randomNumber, setrandomNumber] = useState(22);
+  const [randomNumber2, setrandomNumber2] = useState(112);
+  const [randomNumber3, setrandomNumber3] = useState(92);
   const [isSearchVisible, setIsSearchVisible] = useState(true);
   const [isOwdleVisible, setIsOwdleVisible] = useState(true);
   const [isOwskilldleVisible, setIsOwskilldleVisible] = useState(true);
