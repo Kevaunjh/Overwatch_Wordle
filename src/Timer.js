@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
+import Moment from 'react-moment';
 
 const Timer = ({ timecheck, handleClose }) => {
   const [remainingTime, setRemainingTime] = useState('');
@@ -7,7 +7,6 @@ const Timer = ({ timecheck, handleClose }) => {
   useEffect(() => {
     const updateTimer = () => {
       const now = moment();
-
       const targetTime = now.clone().hour(17).minute(0).second(0);
 
       if (now.isAfter(targetTime)) {
@@ -15,7 +14,6 @@ const Timer = ({ timecheck, handleClose }) => {
       }
 
       const duration = moment.duration(targetTime.diff(now));
-
       const formattedTime = moment.utc(duration.as('milliseconds')).format('HH:mm:ss');
 
       setRemainingTime(formattedTime);
@@ -29,31 +27,19 @@ const Timer = ({ timecheck, handleClose }) => {
   }, []);
 
   useEffect(() => {
-
-    if (remainingTime === '00:00:03') 
-    {
+    if (remainingTime === '00:00:03' || remainingTime === '00:00:02' || remainingTime === '00:00:01') {
       handleClose();
     }
-
-    if (remainingTime === '00:00:02') 
-    {
-      handleClose();
-    }
-
-    if (remainingTime === '00:00:01') 
-    {
-      handleClose();
-    }
-
 
     if (remainingTime === '00:00:00') {
       timecheck();
-
     }
   }, [remainingTime]);
 
   return (
-    <p id='timer'>{remainingTime}</p>
+    <p id='timer'>
+      <Moment format="HH:mm:ss">{remainingTime}</Moment>
+    </p>
   );
 };
 
