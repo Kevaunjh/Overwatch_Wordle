@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'react-moment';
 
 const Table = ({ hero, name_checker, gender_checker, age_checker, role_checker, abilities_checker, affiliation_checker }) => {
 

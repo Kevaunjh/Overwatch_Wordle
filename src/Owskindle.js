@@ -1,6 +1,7 @@
 import React from "react";
 import Solotable from "./Solotable";
 import Modal from "./Modal";
+import Moment from 'react-moment';
 
 const Owskindle = ({ heroList, solution, timecheck }) => {
   return (

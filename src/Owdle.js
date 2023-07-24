@@ -1,6 +1,7 @@
 import React from 'react';
 import Table from './Table';
 import Modal from './Modal';
+import Moment from 'react-moment';
 
 const Owdle = ({ heroList, solution, timecheck }) => {
 

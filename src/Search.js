@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import heroes from './data.json';
+import Moment from 'react-moment';
 
 const Send = 'https://static.thenounproject.com/png/3553333-200.png';
 

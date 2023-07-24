@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Timer from './Timer';
+import Moment from 'react-moment';
 
 const Modal = ({ solution, timecheck}) => {
   const [showModal, setShowModal] = useState(true);

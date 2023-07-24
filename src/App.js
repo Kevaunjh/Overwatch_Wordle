@@ -7,6 +7,7 @@ import heroes from './data.json';
 import skins from './skindata.json';
 import abilities from './abilitydata.json'
 import Timer from './Timer';
+import Moment from 'react-moment';
 
 const App = () => {
   const [heroList, setHeroList] = useState([]);
