@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Moment from 'react-moment';
 import moment from 'moment';
 
 const Timer = ({ timecheck, handleClose }) => {
@@ -39,7 +38,7 @@ const Timer = ({ timecheck, handleClose }) => {
 
   return (
     <p id='timer'>
-      <Moment format="HH:mm:ss">{remainingTime}</Moment>
+      {remainingTime}
     </p>
   );
 };
