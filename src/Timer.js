@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Moment from 'react-moment';
+import moment from 'moment';
 
 const Timer = ({ timecheck, handleClose }) => {
   const [remainingTime, setRemainingTime] = useState('');
