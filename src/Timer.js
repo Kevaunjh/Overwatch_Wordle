@@ -14,7 +14,15 @@ const Timer = ({ timecheck, handleClose }) => {
       }
 
       const duration = moment.duration(targetTime.diff(now));
-      const formattedTime = moment.utc(duration.as('milliseconds')).format('HH:mm:ss');
+      const remainingMilliseconds = duration.as('milliseconds');
+      
+      // Calculate hours, minutes, and seconds from the remaining milliseconds
+      const hours = Math.floor(remainingMilliseconds / (60 * 60 * 1000));
+      const minutes = Math.floor((remainingMilliseconds % (60 * 60 * 1000)) / (60 * 1000));
+      const seconds = Math.floor((remainingMilliseconds % (60 * 1000)) / 1000);
+
+      // Format the time as HH:mm:ss
+      const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
       setRemainingTime(formattedTime);
     };
