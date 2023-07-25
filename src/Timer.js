@@ -6,7 +6,7 @@ const Timer = ({ timecheck, handleClose }) => {
 
   useEffect(() => {
     const updateTimer = () => {
-      const now = moment().utc();
+      const now = moment();
       const targetTime = now.clone().hour(17).minute(0).second(0);
 
       if (now.isAfter(targetTime)) {
@@ -14,15 +14,7 @@ const Timer = ({ timecheck, handleClose }) => {
       }
 
       const duration = moment.duration(targetTime.diff(now));
-      const remainingMilliseconds = duration.as('milliseconds');
-      
-      // Calculate hours, minutes, and seconds from the remaining milliseconds
-      const hours = Math.floor(remainingMilliseconds / (60 * 60 * 1000));
-      const minutes = Math.floor((remainingMilliseconds % (60 * 60 * 1000)) / (60 * 1000));
-      const seconds = Math.floor((remainingMilliseconds % (60 * 1000)) / 1000);
-
-      // Format the time as HH:mm:ss
-      const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      const formattedTime = moment.utc(duration.as('milliseconds')).format('HH:mm:ss');
 
       setRemainingTime(formattedTime);
     };
@@ -46,8 +38,8 @@ const Timer = ({ timecheck, handleClose }) => {
 
   return (
     <p id='timer'>
-      {remainingTime}
-    </p>
+    {remainingTime === '' ? 'Loading...' : remainingTime}
+  </p>
   );
 };
 
