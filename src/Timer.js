@@ -7,7 +7,7 @@ const Timer = ({ timecheck, handleClose }) => {
 
   useEffect(() => {
     const updateTimer = () => {
-      const now = moment().utc(false);
+      const now = moment();
       const targetTime = now.clone().hour(17).minute(0).second(0);
 
       if (now.isAfter(targetTime)) {
