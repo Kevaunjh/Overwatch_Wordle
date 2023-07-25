@@ -38,6 +38,7 @@ const Timer = ({ timecheck, handleClose }) => {
 
   return (
     <p id='timer'>
+      <p> </p>
     {remainingTime === '' ? 'Loading...' : remainingTime}
   </p>
   );
