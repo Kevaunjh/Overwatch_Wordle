@@ -35,7 +35,7 @@ OWwdle is a Wordle-inspired game based on Overwatch, where players guess Overwat
    ```
    npm start
    ```
-5. Edit
+5. Edit to your liking <br>
    From here youll be able to openly edit files towards your own liking. Have fun coding!
 
 ## Contributions
