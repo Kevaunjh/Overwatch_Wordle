@@ -40,4 +40,5 @@ OWwdle is a Wordle-inspired game based on Overwatch, where players guess Overwat
 
 ## Contributions
   https://github.com/Kevaunjh
+  <br>
   https://github.com/Ved204
